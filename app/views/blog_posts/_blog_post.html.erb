@@ -1,5 +1,11 @@
 <div class="w-full h-80 rounded-lg bg-gray-500">
   <% if blog_post.banner_image.attached? %>
-    <%= image_tag blog_post.banner_image %>
+    <%= image_tag blog_post.banner_image, class: "h-64 object-cover rounded-t-lg" %>
+  <% else %>
+    <%= image_tag "books.png", class: "h-64 object-cover rounded-t-lg" %>  
   <% end %>
+
+  <div class="w-full h-full flex">
+    <%= link_to "Read post", blog_post %>
+  </div>
 </div>
