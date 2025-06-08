@@ -1,11 +1,17 @@
-<div class="w-full h-80 rounded-lg bg-gray-500">
+<div class="w-full h-96 rounded-lg bg-gray-500 flex flex-col">
   <% if blog_post.banner_image.attached? %>
     <%= image_tag blog_post.banner_image, class: "h-64 object-cover rounded-t-lg" %>
   <% else %>
     <%= image_tag "books.png", class: "h-64 object-cover rounded-t-lg" %>  
   <% end %>
 
-  <div class="w-full h-full flex">
-    <%= link_to "Read post", blog_post %>
+  <div class="h-16 px-4">
+    <p class="text-xl text-indigo-100 overflow-hidden font-semibold">
+      <%= blog_post.title %>
+    </p>
+  </div>
+
+  <div class="w-full h-full flex items-center px-4">
+    <%= link_to "Read post", blog_post, class: "px-3 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 via-indigo-500 text-indigo-50" %>
   </div>
 </div>
